@@ -24,6 +24,28 @@ If an agent run is unavailable, state that limitation and distinguish static rev
 
 For installation or packaging changes, run `python3 -m unittest discover -s tests -v` (Python 3.9+, standard library only). These checks use temporary skills and destinations; they do not prove agent discovery or workflow execution. Follow [the installer verification guide](scripts/README.md) and the release guide for those checks. There is no application build or workflow test suite.
 
+### Automated repository checks
+
+[Repository checks](.github/workflows/ci.yml) runs on every push, pull request, and manual dispatch:
+
+- Installer and packaging fixtures on Linux with Python 3.9, and Linux, macOS, and Windows with Python 3.14. These include complete resource copying, safe destination handling, synchronized manifests, and unavailable development catalogs.
+- Markdown linting for tracked documentation and future skills, using [.markdownlint-cli2.jsonc](.markdownlint-cli2.jsonc). Long prose lines and fragments without an H1 are allowed.
+- GitHub Actions syntax validation with actionlint and whitespace validation across all tracked files.
+
+To repeat the checks locally from the repository root:
+
+```sh
+python3 -m unittest discover -s tests -v
+npx --yes markdownlint-cli2@0.23.2
+actionlint
+git diff --check
+git diff --check "$(git hash-object -t tree /dev/null)" HEAD
+```
+
+Markdown linting requires Node.js 22+ and npm. Install [actionlint 1.7.12](https://github.com/rhysd/actionlint/releases/tag/v1.7.12) to match CI. Actions are pinned to commit SHAs; Dependabot opens grouped weekly update PRs. When updating the Markdown action, align the local CLI version above with its bundled version. Update the actionlint version and archive checksum together in the workflow.
+
+These checks validate files and installer behavior. Fresh-agent scenario runs and release-route verification remain required before advertising skills or installation routes as verified.
+
 ## Pull requests
 
 Use the PR template. List changed workflows, meaningful verification results, and remaining limitations. Avoid unrelated cleanup in the same PR.

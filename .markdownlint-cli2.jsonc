@@ -1,0 +1,10 @@
+{
+  "gitignore": true,
+  "globs": ["**/*.md"],
+  "config": {
+    // Prose stays on one line; editors can wrap it for display.
+    "MD013": false,
+    // CLAUDE.md and the PR template are fragments without an H1 heading.
+    "MD041": false
+  }
+}
