@@ -1,0 +1,20 @@
+{
+  "name": "human-in-the-loop",
+  "interface": {
+    "displayName": "Human in the Loop"
+  },
+  "plugins": [
+    {
+      "name": "human-in-the-loop",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "NOT_AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

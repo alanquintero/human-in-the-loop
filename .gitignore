@@ -1,0 +1,30 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor scratch files
+*.swp
+*.swo
+*~
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Local agent artifacts; keep shared instructions and skills tracked
+/.agents/plans/
+/.claude/plans/
+/.claude/worktrees/
+/.claude/settings.local.json
+/.claude/__pycache__/
+/CLAUDE.local.md
+
+# Helper-script environments and generated caches
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.pytest_cache/
+.ruff_cache/
