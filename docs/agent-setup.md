@@ -2,9 +2,9 @@
 
 AGENTS.md guides agents editing this repository and links to detailed guidance. CLAUDE.md imports that entry point. These files guide development of the plugin; they are not its workflow skills.
 
-The repository root is the plugin package: `plugin.json` identifies it, and `skills/` holds its canonical skill sources. `.agents/plugins/marketplace.json` catalogs the plugin with a source path relative to the repository root. Its installation policy is `NOT_AVAILABLE` while development is incomplete.
+The repository root is the plugin package: `plugin.json` identifies it, and `skills/` holds its canonical skill sources. `.agents/plugins/marketplace.json` catalogs the plugin with a source path relative to the repository root. Its installation policy is `NOT_AVAILABLE` while development is incomplete. `.claude-plugin/plugin.json` supplies Claude Code metadata; its marketplace catalog has no plugin entries until release. Keep both manifests' identity, version, and descriptive metadata synchronized.
 
-Keep skill sources in `skills/`; consumers receive them through plugin installation. Add agent-specific discovery links only for a documented local testing need, and keep one source of truth. Installing this plugin is separate from configuring an agent to edit its repository.
+Keep skill sources in `skills/`; consumers install the plugin or copy complete skill directories using the [installation guide](installation.md). The installer targets consumers' discovery folders; those folders are not distribution sources. Add discovery links here only for documented local testing, and keep one source of truth. Installing skills is separate from configuring an agent to edit this repository.
 
 For other development agents, configure their instruction entry point to read AGENTS.md using their documented mechanism. Add integration files only when needed.
 

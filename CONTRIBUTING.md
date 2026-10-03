@@ -8,7 +8,7 @@ Follow [the skill authoring guide](docs/skill-authoring.md). Update the README c
 
 Use fictional or sanitized tickets, diffs, and comments for examples. Never commit credentials, private customer data, or personal agent configuration.
 
-Develop plugin skills in `skills/`. End users install the packaged plugin; they do not need an author checkout. Keep the unreleased notice and installation policy until [the release checklist](docs/releasing.md) is complete.
+Develop skills in `skills/`. End users install a plugin or copy complete skill directories using the [installation guide](docs/installation.md). Keep the unreleased notice and unavailable marketplace catalogs until [the release checklist](docs/releasing.md) is complete.
 
 ## Verification
 
@@ -21,6 +21,8 @@ For each new skill or behavior change:
 5. Run `git diff --check` and inspect `git status --short` for accidental files.
 
 If an agent run is unavailable, state that limitation and distinguish static review from observed behavior. Add automated checks when executable scripts or repeatable validation justify them; document their commands and dependencies alongside the code.
+
+For installation or packaging changes, run `python3 -m unittest discover -s tests -v` (Python 3.9+, standard library only). These checks use temporary skills and destinations; they do not prove agent discovery or workflow execution. Follow [the installer verification guide](scripts/README.md) and the release guide for those checks. There is no application build or workflow test suite.
 
 ## Pull requests
 

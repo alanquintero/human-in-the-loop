@@ -1,0 +1,8 @@
+{
+  "name": "human-in-the-loop",
+  "description": "Human in the Loop lifecycle skills (unreleased; no installable entries).",
+  "owner": {
+    "name": "Alan Quintero"
+  },
+  "plugins": []
+}

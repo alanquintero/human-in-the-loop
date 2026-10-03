@@ -10,4 +10,4 @@ This repository develops a distributable plugin of software development lifecycl
 - Read [the setup guide](docs/agent-setup.md) when changing agent wiring or repository layout.
 - Read [the release guide](docs/releasing.md) when changing packaging or preparing a release.
 
-There is no application build or automated test suite yet. Check `git diff --check` and follow the scenario verification in CONTRIBUTING.md. Do not claim an unperformed agent run passed.
+There is no application build or automated workflow test suite. For installer and packaging changes, run the fixture tests documented in CONTRIBUTING.md. Check `git diff --check` and follow scenario verification. Do not claim an unperformed agent run passed.

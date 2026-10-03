@@ -1,0 +1,10 @@
+{
+  "name": "human-in-the-loop",
+  "version": "0.1.0-dev",
+  "description": "AI skills for task analysis, implementation, PR review, and self-review.",
+  "author": {
+    "name": "Alan Quintero"
+  },
+  "repository": "https://github.com/alanquintero/human-in-the-loop",
+  "license": "MIT"
+}
