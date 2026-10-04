@@ -2,6 +2,10 @@
 
 Keep each change focused on one workflow or one shared improvement. Describe the problem, the resulting behavior, and how you checked it.
 
+## Get started locally
+
+Follow [local developer setup](docs/local-development.md) to clone this repository or your fork and load all unreleased skills in your chosen agent. Use its native plugin/link route where documented, or batch-copy all skills, then refresh that route when testing edits. You do not need a published release to contribute; keep test-only catalog changes and installed copies out of the PR.
+
 ## Authoring
 
 Follow [the skill authoring guide](docs/skill-authoring.md). Update the README catalog when adding or renaming a skill. Keep general repository guidance in AGENTS.md and linked docs; workflow-specific instructions belong in the skill.

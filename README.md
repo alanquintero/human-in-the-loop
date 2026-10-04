@@ -21,17 +21,21 @@ Planned workflows include task analysis, implementation, PR review, and self-rev
 | --- | --- |
 | OpenAI Codex | Plugin marketplace or copy installer |
 | OpenAI ChatGPT Work | Plugin marketplace |
-| Anthropic Claude Code | Plugin marketplace or copy installer |
-| GitHub Copilot | Copy installer |
-| Cursor | Copy installer |
-| Google Gemini CLI | Copy installer |
+| Anthropic Claude Code | Direct local plugin, plugin marketplace, or copy installer |
+| GitHub Copilot | Local plugin (CLI) or copy installer |
+| Cursor | Local Agent Plugin or copy installer |
+| Google Gemini CLI | Native skill install/link or copy installer |
 | Windsurf / Devin Desktop Cascade | Copy installer |
 | Cline | Copy installer |
 | OpenCode | Copy installer |
 
-These routes have packaging and installation instructions; agent installation verification remains pending. ChatGPT support refers to Work's plugin route. See [the release checklist](docs/releasing.md) before enabling distribution.
+These setup instructions follow each provider's official documentation; installation and workflow verification for this project remain pending. ChatGPT support refers to Work's plugin route. See [the release checklist](docs/releasing.md) before enabling distribution.
 
-## Installation (planned)
+## Local development and contribution
+
+Follow [local developer setup](docs/local-development.md) to clone the repository and load all its skills in your chosen agent. It covers Codex, ChatGPT Work, Claude Code, Copilot, Cursor, Gemini CLI, Cascade, Cline, and OpenCode, including refresh and uninstall steps. See [CONTRIBUTING.md](CONTRIBUTING.md) for checks and pull requests.
+
+## Release installation (planned)
 
 Follow the [installation guide](docs/installation.md) for commands, prerequisites, official discovery paths, and cloud-session limitations. Each skill stays in one source directory; agent-specific installation puts it where that agent discovers skills.
 

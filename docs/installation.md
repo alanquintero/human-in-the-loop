@@ -2,11 +2,13 @@
 
 **Unreleased:** skill sources are available for development and local review; marketplace installation remains unavailable. These routes follow official documentation reviewed on 2026-10-03; none has passed an installation and workflow run for this plugin. See [release checks](releasing.md) before publishing.
 
+To clone the repository and try or contribute to the unreleased skills now, follow [local developer setup](local-development.md). The release commands below remain planned.
+
 ## Shared format, different installation routes
 
 Every skill ships once in `skills/<name>/SKILL.md` using the [Agent Skills format](https://agentskills.io/specification). Copy its entire directory, including scripts, references, and assets. An agent's skill folder belongs in the consuming project or user profile; cloning this repository alone does not install its skills.
 
-The installer uses these documented locations. Project paths are relative to the consuming project; `~` means the user's home directory, including on Windows.
+The copy installer uses these documented locations; native plugin and skill-management routes are described below. Project paths are relative to the consuming project; `~` means the user's home directory, including on Windows.
 
 | Agent / installer name | Project skills | Personal skills | Official instructions |
 | --- | --- | --- | --- |
@@ -55,9 +57,10 @@ After release, register the marketplace using its actual tag (replace the exampl
 
 ```sh
 codex plugin marketplace add alanquintero/human-in-the-loop --ref v0.1.0
+codex plugin add human-in-the-loop@human-in-the-loop
 ```
 
-Then open the Plugins Directory, select Human in the Loop, and install the plugin. Marketplace registration alone does not install it. Standalone Codex skills can instead use the copy installer. This plugin route does not imply installation into every ChatGPT chat surface.
+The second command installs the whole plugin with its skills. You can also install through the Plugins Directory by selecting Human in the Loop. Marketplace registration alone does not install it. See [OpenAI's developer commands](https://learn.chatgpt.com/docs/developer-commands) for the CLI syntax. Standalone Codex skills can instead use the copy installer. This plugin route does not imply installation into every ChatGPT chat surface.
 
 ## Claude Code plugin
 
@@ -71,6 +74,36 @@ claude plugin install human-in-the-loop@human-in-the-loop
 ```
 
 Use Claude Code's plugin manager to update or uninstall. Use the copy installer instead for standalone skills; it needs no marketplace.
+
+For development before release, `claude --plugin-dir /path/to/human-in-the-loop` loads the entire checkout without marketplace registration. See [local developer setup](local-development.md#claude-code) and [Claude's development guide](https://code.claude.com/docs/en/plugins/create).
+
+## GitHub Copilot CLI plugin (planned)
+
+Copilot CLI supports the root Agent Plugins 1.0 manifest and the canonical `skills/` layout. After release, from a checkout of the reviewed release tag:
+
+```sh
+copilot plugin install .
+copilot plugin list
+```
+
+This installs the whole plugin. Copilot CLI also accepts a GitHub repository or Git URL as a plugin source. Use `copilot plugin uninstall human-in-the-loop` to remove it; consult [GitHub's plugin reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference) for updates and source formats. For local development, follow [the Copilot setup](local-development.md#github-copilot). IDE and cloud skill-folder setup are separate routes; do not infer those installs from a CLI plugin install.
+
+## Cursor local Agent Plugin (planned)
+
+Cursor supports the root Agent Plugins manifest, as described in its [plugin reference](https://cursor.com/docs/reference/plugins). After release, follow [local developer setup](local-development.md#cursor) using the reviewed tagged checkout: copy `plugin.json` and the complete `skills/` directory into `~/.cursor/plugins/local/human-in-the-loop/`, then reload and check **Customize**. Local import controls, precedence, refresh, and removal follow the same development route.
+
+Cursor's [GitHub marketplace import](https://cursor.com/docs/skills#installing-skills-from-a-repository) requires its own `.cursor-plugin/marketplace.json`. This repository does not ship that catalog or a reviewed Cursor marketplace listing. Use local Agent Plugin loading or the copy installer; shared packaging alone does not supply marketplace distribution.
+
+## Gemini CLI native skill management (planned)
+
+Gemini's CLI can install all skills from the `skills/` directory. After release, from the reviewed tagged checkout:
+
+```sh
+gemini skills install ./skills --scope user
+gemini skills list
+```
+
+For project scope, run from the consuming project with the tagged checkout's absolute `skills/` path and `--scope workspace`. Unlike this repository's conflict-refusing copy installer, Gemini's native installer can replace same-name destinations. For development, `gemini skills link` keeps the skill directories connected to the editable source; see [local developer setup](local-development.md#gemini-cli). [Gemini's management guide](https://geminicli.com/docs/cli/using-agent-skills/) and [installer implementation](https://github.com/google-gemini/gemini-cli/blob/main/packages/cli/src/utils/skillUtils.ts) document these routes.
 
 ## Compatibility limits
 
