@@ -2,7 +2,7 @@
 
 Portable AI skills for the software development lifecycle, with human judgment at the decisions that need it.
 
-> **Unreleased — in development.** The first skill is available in source for development and local review; marketplace installation remains unavailable.
+> **Unreleased — in development.** Skills are available in source for development and local review; marketplace installation remains unavailable.
 
 Planned workflows include task analysis, implementation, PR review, and self-review.
 
@@ -11,8 +11,9 @@ Planned workflows include task analysis, implementation, PR review, and self-rev
 | Skill | Purpose |
 | --- | --- |
 | [repo-learning-tutor](skills/repo-learning-tutor/SKILL.md) | Learn an unfamiliar code or documentation repository through orientation, guided practice, and local progress notes. |
+| [task-tech-tutor](skills/task-tech-tutor/SKILL.md) | Learn the technologies and specific framework concepts a ticket requires before detailed task analysis. |
 
-This first version has had brief author use; fresh-agent workflow verification and release checks remain pending.
+`repo-learning-tutor` has had brief author use; workflow verification across supported hosts and release checks remain pending for both skills.
 
 ## Supported agents (planned)
 
