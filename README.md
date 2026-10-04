@@ -31,9 +31,9 @@ Planned workflows include task analysis, implementation, PR review, and self-rev
 
 These setup instructions follow each provider's official documentation; installation and workflow verification for this project remain pending. ChatGPT support refers to Work's plugin route. See [the release checklist](docs/releasing.md) before enabling distribution.
 
-## Local development and contribution
+## Local usage and development
 
-Follow [local developer setup](docs/local-development.md) to clone the repository and load all its skills in your chosen agent. It covers Codex, ChatGPT Work, Claude Code, Copilot, Cursor, Gemini CLI, Cascade, Cline, and OpenCode, including refresh and uninstall steps. See [CONTRIBUTING.md](CONTRIBUTING.md) for checks and pull requests.
+Follow the [local usage and development guide](docs/local-development.md) to clone the repository and try all its skills in your chosen agent. Contributing changes is optional. The guide covers every listed agent, including refresh and uninstall steps. To contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Release installation (planned)
 

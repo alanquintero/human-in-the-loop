@@ -4,7 +4,7 @@ Keep each change focused on one workflow or one shared improvement. Describe the
 
 ## Get started locally
 
-Follow [local developer setup](docs/local-development.md) to clone this repository or your fork and load all unreleased skills in your chosen agent. Use its native plugin/link route where documented, or batch-copy all skills, then refresh that route when testing edits. You do not need a published release to contribute; keep test-only catalog changes and installed copies out of the PR.
+Follow [local usage and development guide](docs/local-development.md) to clone this repository or your fork and load all unreleased skills in your chosen agent. Use its native plugin/link route where documented, or batch-copy all skills, then refresh that route when testing edits. You do not need a published release to contribute; keep test-only catalog changes and installed copies out of the PR.
 
 ## Authoring
 

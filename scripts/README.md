@@ -1,6 +1,6 @@
 # Installer verification
 
-`install-skills.py` uses Python 3.9+ and the standard library. It batch-copies all skills by default. See [local developer setup](../docs/local-development.md#batch-copy-all-skills) for unreleased checkout commands and [planned release installation](../docs/installation.md) for tagged-source setup and discovery paths. Native plugin and Gemini link/install commands are separate routes; this script does not register marketplaces, configure tools, or validate full skill metadata.
+`install-skills.py` uses Python 3.9+ and the standard library. It batch-copies all skills by default. See [local usage and development guide](../docs/local-development.md#batch-copy-all-skills) for unreleased checkout commands and [planned release installation](../docs/installation.md) for tagged-source setup and discovery paths. Native plugin and Gemini link/install commands are separate routes; this script does not register marketplaces, configure tools, or validate full skill metadata.
 
 Run the fixture checks from the repository root:
 

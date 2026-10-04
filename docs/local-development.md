@@ -1,6 +1,6 @@
-# Local developer setup
+# Local usage and development
 
-Clone this repository to try or contribute to its unreleased skills. The routes below follow official documentation reviewed on 2026-10-03; installation and workflow runs for this project remain unverified. Public marketplace installation stays unavailable, and [release installation](installation.md) remains planned.
+Clone this repository to install and try its unreleased skills on your machine. You do not need to edit the skills or contribute changes. The same setup also supports development if you choose to contribute. The routes below follow official documentation reviewed on 2026-10-03; installation and workflow runs for this project remain unverified. Public marketplace installation stays unavailable, and [release installation](installation.md) remains planned.
 
 ## Clone and choose an agent
 
@@ -11,9 +11,9 @@ git clone https://github.com/alanquintero/human-in-the-loop.git
 cd human-in-the-loop
 ```
 
-For pull requests without repository write access, fork on GitHub and clone your fork instead. Create a branch before editing. Cloning alone does not install the skills. Keep source changes in `skills/`; use a separate consuming project for scenario tests and keep installed copies out of this plugin's commits.
+Cloning alone does not install the skills. Choose a route below, then open the project where you want to use them in your agent. Forks, development branches, and repository checks are only needed when contributing changes.
 
-| Agent | Development route for all skills |
+| Agent | Local route for all skills |
 | --- | --- |
 | [Codex](#codex) | Register a separate local test marketplace, then install the whole plugin. |
 | [ChatGPT Work](#chatgpt-work) | Install the local test plugin through the desktop Plugins Directory. |
@@ -30,7 +30,7 @@ Choose one route and scope per agent to avoid duplicate skill names. Native comm
 
 ## Codex
 
-[Codex's CLI](https://learn.chatgpt.com/docs/developer-commands) installs the whole plugin after registering its marketplace. The shared catalog sets installation to `NOT_AVAILABLE`. For development, create a separate test checkout from your source checkout:
+[Codex's CLI](https://learn.chatgpt.com/docs/developer-commands) installs the whole plugin after registering its marketplace. The shared catalog sets installation to `NOT_AVAILABLE`. To try the plugin locally before release, create a separate test checkout from your source checkout:
 
 ```sh
 git clone . ../human-in-the-loop-plugin-test
@@ -93,7 +93,7 @@ copilot plugin install .
 copilot plugin list
 ```
 
-Start Copilot in your consuming project, run `/skills list`, and invoke `/repo-learning-tutor`. [GitHub's plugin creation guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-creating) documents local installation and skill discovery.
+Start Copilot in the project where you want to use the skills, run `/skills list`, and invoke `/repo-learning-tutor`. [GitHub's plugin creation guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-creating) documents local installation and skill discovery.
 
 After edits, refresh the local installation before starting a new session:
 
@@ -209,7 +209,7 @@ The repository installer refuses existing destination names, including dangling 
 
 Local installation alone does not configure a remote host. Follow the provider's route for the environment you actually run:
 
-| Environment | Development setup |
+| Environment | Usage and testing setup |
 | --- | --- |
 | Codex remote sessions / ChatGPT workspace | Use that host's project-skill or workspace-plugin route; a local plugin cache does not publish to the workspace. See [OpenAI packaging](https://developers.openai.com/plugins/build/plugins). |
 | Copilot cloud agent | Copy into `.github/skills/` in the consuming repository and commit the skills and resources to its test branch. See [GitHub's guide](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills). |
@@ -217,7 +217,13 @@ Local installation alone does not configure a remote host. Follow the provider's
 | Claude Code cloud sessions | Follow [Claude's install guide](https://code.claude.com/docs/en/plugins/install); local `--plugin-dir` sessions and local installed plugins do not supply cloud sessions. Claude.ai/Cowork have separate plugin controls. |
 | SSH, containers, other remote workers | Install the agent's skill directories on the worker or commit project skills in its consuming repository; keep the plugin source repository's `skills/` canonical. |
 
-## Verify and contribute
+## Try the installed skills
+
+In the project where you want to use the skills, invoke `repo-learning-tutor` using your agent's instructions above. You can also use `task-tech-tutor` to learn the technologies needed for a task. Check that the agent finds the skill and its bundled references. You can stop here if you only want to use or evaluate the skills; contribution checks are optional for local users.
+
+## Optional: develop and contribute
+
+For pull requests without repository write access, fork on GitHub and clone your fork instead. Create a branch before editing. Keep source changes in `skills/`, use a separate consuming project for scenario tests, and keep installed copies out of this plugin's commits.
 
 Edit `skills/<name>/SKILL.md` and its resources following the [authoring guide](skill-authoring.md). Refresh your chosen route, then run the skill's `references/scenarios.md` in fresh agent sessions. Verify discovery of both skills, explicit invocation, and access to bundled references. An installation or filesystem copy does not prove workflow execution.
 

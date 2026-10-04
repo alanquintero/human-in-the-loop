@@ -1,6 +1,6 @@
 # Releasing the plugin
 
-The current `0.1.0-dev` version is development metadata, not a published release. The OpenAI marketplace entry is `NOT_AVAILABLE`, the Claude Code catalog is empty, and [release installation instructions](installation.md) are planned. Contributors can use [local developer setup](local-development.md) before release.
+The current `0.1.0-dev` version is development metadata, not a published release. The OpenAI marketplace entry is `NOT_AVAILABLE`, the Claude Code catalog is empty, and [release installation instructions](installation.md) are planned. Users and contributors can follow the [local usage and development guide](local-development.md) before release.
 
 ## First release
 

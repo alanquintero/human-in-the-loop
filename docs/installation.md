@@ -2,7 +2,7 @@
 
 **Unreleased:** skill sources are available for development and local review; marketplace installation remains unavailable. These routes follow official documentation reviewed on 2026-10-03; none has passed an installation and workflow run for this plugin. See [release checks](releasing.md) before publishing.
 
-To clone the repository and try or contribute to the unreleased skills now, follow [local developer setup](local-development.md). The release commands below remain planned.
+To clone the repository and use, try, or contribute to the unreleased skills now, follow the [local usage and development guide](local-development.md). The release commands below remain planned.
 
 ## Shared format, different installation routes
 
@@ -75,7 +75,7 @@ claude plugin install human-in-the-loop@human-in-the-loop
 
 Use Claude Code's plugin manager to update or uninstall. Use the copy installer instead for standalone skills; it needs no marketplace.
 
-For development before release, `claude --plugin-dir /path/to/human-in-the-loop` loads the entire checkout without marketplace registration. See [local developer setup](local-development.md#claude-code) and [Claude's development guide](https://code.claude.com/docs/en/plugins/create).
+For local usage or development before release, `claude --plugin-dir /path/to/human-in-the-loop` loads the entire checkout without marketplace registration. See the [local usage and development guide](local-development.md#claude-code) and [Claude's development guide](https://code.claude.com/docs/en/plugins/create).
 
 ## GitHub Copilot CLI plugin (planned)
 
@@ -90,7 +90,7 @@ This installs the whole plugin. Copilot CLI also accepts a GitHub repository or 
 
 ## Cursor local Agent Plugin (planned)
 
-Cursor supports the root Agent Plugins manifest, as described in its [plugin reference](https://cursor.com/docs/reference/plugins). After release, follow [local developer setup](local-development.md#cursor) using the reviewed tagged checkout: copy `plugin.json` and the complete `skills/` directory into `~/.cursor/plugins/local/human-in-the-loop/`, then reload and check **Customize**. Local import controls, precedence, refresh, and removal follow the same development route.
+Cursor supports the root Agent Plugins manifest, as described in its [plugin reference](https://cursor.com/docs/reference/plugins). After release, follow [local usage and development guide](local-development.md#cursor) using the reviewed tagged checkout: copy `plugin.json` and the complete `skills/` directory into `~/.cursor/plugins/local/human-in-the-loop/`, then reload and check **Customize**. Local import controls, precedence, refresh, and removal follow the same development route.
 
 Cursor's [GitHub marketplace import](https://cursor.com/docs/skills#installing-skills-from-a-repository) requires its own `.cursor-plugin/marketplace.json`. This repository does not ship that catalog or a reviewed Cursor marketplace listing. Use local Agent Plugin loading or the copy installer; shared packaging alone does not supply marketplace distribution.
 
@@ -103,7 +103,7 @@ gemini skills install ./skills --scope user
 gemini skills list
 ```
 
-For project scope, run from the consuming project with the tagged checkout's absolute `skills/` path and `--scope workspace`. Unlike this repository's conflict-refusing copy installer, Gemini's native installer can replace same-name destinations. For development, `gemini skills link` keeps the skill directories connected to the editable source; see [local developer setup](local-development.md#gemini-cli). [Gemini's management guide](https://geminicli.com/docs/cli/using-agent-skills/) and [installer implementation](https://github.com/google-gemini/gemini-cli/blob/main/packages/cli/src/utils/skillUtils.ts) document these routes.
+For project scope, run from the consuming project with the tagged checkout's absolute `skills/` path and `--scope workspace`. Unlike this repository's conflict-refusing copy installer, Gemini's native installer can replace same-name destinations. For development, `gemini skills link` keeps the skill directories connected to the editable source; see [local usage and development guide](local-development.md#gemini-cli). [Gemini's management guide](https://geminicli.com/docs/cli/using-agent-skills/) and [installer implementation](https://github.com/google-gemini/gemini-cli/blob/main/packages/cli/src/utils/skillUtils.ts) document these routes.
 
 ## Compatibility limits
 

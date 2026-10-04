@@ -2,7 +2,7 @@
 
 AGENTS.md guides agents editing this repository and links to detailed guidance. CLAUDE.md imports that entry point. These files guide development of the plugin; they are not its workflow skills.
 
-For cloning and trying all unreleased skills in any listed agent, follow [local developer setup](local-development.md). It covers native plugin loading, Gemini skill linking, and batch-copy discovery folders, with refresh and uninstall instructions.
+For cloning and trying all unreleased skills in any listed agent, follow [local usage and development guide](local-development.md). It covers native plugin loading, Gemini skill linking, and batch-copy discovery folders, with refresh and uninstall instructions.
 
 The repository root is the plugin package: `plugin.json` identifies it, and `skills/` holds its canonical skill sources. `.agents/plugins/marketplace.json` catalogs the plugin with a source path relative to the repository root. Its installation policy is `NOT_AVAILABLE` while development is incomplete. `.claude-plugin/plugin.json` supplies Claude Code metadata; its marketplace catalog has no plugin entries until release. Keep both manifests' identity, version, and descriptive metadata synchronized.
 
