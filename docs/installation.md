@@ -1,6 +1,6 @@
 # Agent installation (planned)
 
-**Unreleased:** no workflow skills ship yet. These routes follow official documentation reviewed on 2026-10-03; none has passed an installation and workflow run for this plugin. See [release checks](releasing.md) before publishing.
+**Unreleased:** skill sources are available for development and local review; marketplace installation remains unavailable. These routes follow official documentation reviewed on 2026-10-03; none has passed an installation and workflow run for this plugin. See [release checks](releasing.md) before publishing.
 
 ## Shared format, different installation routes
 

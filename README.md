@@ -2,9 +2,17 @@
 
 Portable AI skills for the software development lifecycle, with human judgment at the decisions that need it.
 
-> **Unreleased — in development.** No workflow skills are available yet. Plugin manifests, catalogs, and the copy installer are scaffolding; marketplace installation is unavailable.
+> **Unreleased — in development.** The first skill is available in source for development and local review; marketplace installation remains unavailable.
 
 Planned workflows include task analysis, implementation, PR review, and self-review.
+
+## Skills (in development)
+
+| Skill | Purpose |
+| --- | --- |
+| [repo-learning-tutor](skills/repo-learning-tutor/SKILL.md) | Learn an unfamiliar code or documentation repository through orientation, guided practice, and local progress notes. |
+
+This first version has had brief author use; fresh-agent workflow verification and release checks remain pending.
 
 ## Supported agents (planned)
 
@@ -20,7 +28,7 @@ Planned workflows include task analysis, implementation, PR review, and self-rev
 | Cline | Copy installer |
 | OpenCode | Copy installer |
 
-These routes have packaging and installation instructions, but no shipped workflow skills or verified agent installations yet. ChatGPT support refers to Work's plugin route. See [the release checklist](docs/releasing.md) before enabling distribution.
+These routes have packaging and installation instructions; agent installation verification remains pending. ChatGPT support refers to Work's plugin route. See [the release checklist](docs/releasing.md) before enabling distribution.
 
 ## Installation (planned)
 
