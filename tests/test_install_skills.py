@@ -179,15 +179,24 @@ class PackagingTests(unittest.TestCase):
             with self.subTest(key=key):
                 self.assertEqual(portable[key], claude[key])
 
-    def test_unreleased_catalogs_do_not_offer_installation(self):
+    def test_codex_catalog_offers_installation_with_root_skills(self):
         portable = self.read_json("plugin.json")
         openai = self.read_json(".agents/plugins/marketplace.json")
         claude = self.read_json(".claude-plugin/marketplace.json")
         self.assertEqual(openai["name"], claude["name"])
+        self.assertEqual(len(openai["plugins"]), 1)
         self.assertEqual(openai["plugins"][0]["name"], portable["name"])
         self.assertEqual(openai["plugins"][0]["source"], {"source": "local", "path": "./"})
+        self.assertEqual(openai["plugins"][0]["policy"]["installation"], "AVAILABLE")
+        self.assertEqual(openai["plugins"][0]["policy"]["authentication"], "ON_INSTALL")
+        self.assertEqual(openai["plugins"][0]["category"], "Productivity")
+        self.assertTrue((REPOSITORY / "skills" / "repo-learning-tutor" / "SKILL.md").is_file())
+        self.assertTrue((REPOSITORY / "skills" / "task-tech-tutor" / "SKILL.md").is_file())
+
+    def test_claude_catalog_stays_empty_until_release(self):
+        portable = self.read_json("plugin.json")
+        claude = self.read_json(".claude-plugin/marketplace.json")
         if portable["version"].endswith("-dev"):
-            self.assertEqual(openai["plugins"][0]["policy"]["installation"], "NOT_AVAILABLE")
             self.assertEqual(claude["plugins"], [])
         else:
             self.assertEqual(claude["plugins"][0]["name"], portable["name"])

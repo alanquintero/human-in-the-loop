@@ -1,8 +1,8 @@
 # Agent installation (planned)
 
-**Unreleased:** skill sources are available for development and local review; marketplace installation remains unavailable. These routes follow official documentation reviewed on 2026-10-03; none has passed an installation and workflow run for this plugin. See [release checks](releasing.md) before publishing.
+**Unreleased:** Codex marketplace installation is available for the development version. Stable release commands below remain planned. Codex CLI installation from a local checkout has been checked; workflow runs and other hosts remain unverified. See [release checks](releasing.md) before publishing.
 
-To clone the repository and use, try, or contribute to the unreleased skills now, follow the [local usage and development guide](local-development.md). The release commands below remain planned.
+To install in Codex now, follow [Codex setup](local-development.md#codex), which includes a single terminal line for GitHub installation and a route for an existing clone. For other agents or contribution setup, follow the rest of the [local usage and development guide](local-development.md). The tagged release commands below remain planned.
 
 ## Shared format, different installation routes
 
@@ -51,7 +51,7 @@ Manual installation is also supported: copy `skills/<name>/` to `<table-path>/<n
 
 ## Codex and ChatGPT Work plugin
 
-The root `plugin.json` packages `skills/`. `.agents/plugins/marketplace.json` catalogs that plugin and remains `NOT_AVAILABLE` during development. [OpenAI packaging documentation](https://developers.openai.com/plugins/build/plugins) describes this route for Codex and Work mode in the ChatGPT desktop app.
+The root `plugin.json` packages `skills/`. `.agents/plugins/marketplace.json` catalogs that plugin with `AVAILABLE` installation for development use. This does not publish a stable release or list the plugin in the universal public directory. [OpenAI packaging documentation](https://developers.openai.com/plugins/build/plugins) describes this route for Codex and Work mode in the ChatGPT desktop app.
 
 After release, register the marketplace using its actual tag (replace the example `v0.1.0`):
 

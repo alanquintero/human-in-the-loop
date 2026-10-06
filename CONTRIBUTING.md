@@ -12,7 +12,7 @@ Follow [the skill authoring guide](docs/skill-authoring.md). Update the README c
 
 Use fictional or sanitized tickets, diffs, and comments for examples. Never commit credentials, private customer data, or personal agent configuration.
 
-Develop skills in `skills/`. End users install a plugin or copy complete skill directories using the [installation guide](docs/installation.md). Keep the unreleased notice and unavailable marketplace catalogs until [the release checklist](docs/releasing.md) is complete.
+Develop skills in `skills/`. End users install a plugin or copy complete skill directories using the [installation guide](docs/installation.md). Keep the unreleased notice and planned stable release instructions until [the release checklist](docs/releasing.md) is complete. The Codex marketplace is available for development installs; keep the Claude marketplace empty until release.
 
 ## Verification
 
@@ -32,7 +32,7 @@ For installation or packaging changes, run `python3 -m unittest discover -s test
 
 [Repository checks](.github/workflows/ci.yml) runs on every push, pull request, and manual dispatch:
 
-- Installer and packaging fixtures on Linux with Python 3.9, and Linux, macOS, and Windows with Python 3.14. These include complete resource copying, safe destination handling, synchronized manifests, and unavailable development catalogs.
+- Installer and packaging fixtures on Linux with Python 3.9, and Linux, macOS, and Windows with Python 3.14. These include complete resource copying, safe destination handling, synchronized manifests, an available Codex development catalog, and an empty unreleased Claude catalog.
 - Markdown linting for tracked documentation and future skills, using [.markdownlint-cli2.jsonc](.markdownlint-cli2.jsonc). Long prose lines and fragments without an H1 are allowed.
 - GitHub Actions syntax validation with actionlint and whitespace validation across all tracked files.
 

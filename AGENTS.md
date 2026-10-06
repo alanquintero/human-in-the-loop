@@ -3,7 +3,7 @@
 This repository develops a distributable plugin of software development lifecycle skills. It is unreleased.
 
 - Keep shipped skills in `skills/<skill-name>/SKILL.md`; supporting resources stay beside their skill. Agent discovery folders are not the distribution source.
-- Keep installation instructions labeled as planned and the marketplace entry unavailable until the release checklist is complete.
+- Keep stable release instructions labeled as planned until the release checklist is complete. The Codex marketplace entry is AVAILABLE for development installs; preserve the unreleased notice and distinguish installation checks from workflow verification.
 - Save local task notes in `.agents/plans/` (Git-ignored). Keep reusable examples and verification scenarios in the skill directory.
 - Read [the authoring guide](docs/skill-authoring.md) when adding or editing a skill.
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) when verifying changes or preparing a contribution.
