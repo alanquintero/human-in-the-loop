@@ -38,23 +38,35 @@ codex plugin marketplace add alanquintero/human-in-the-loop && codex plugin add 
 
 This installs the development version from the repository's default branch, which must contain the `AVAILABLE` catalog. Maintainers must push the enabling commit before sharing this command; local changes do not update GitHub or another machine's checkout. It is one shell line containing two Codex commands: register the marketplace, then install the plugin if registration succeeds. It works in macOS/Linux shells and PowerShell 7+; in older PowerShell, run each command separately and stop if registration fails. Native plugin installation needs no Python script or manual catalog edits.
 
-If you already cloned the repository, run this from the checkout's root instead:
+If you already cloned the repository, run these steps from the checkout's root instead. Stop if a command fails:
 
-```sh
-codex plugin marketplace add . && codex plugin add human-in-the-loop@human-in-the-loop
-```
+1. Register your local checkout as a marketplace:
+
+   ```sh
+   codex plugin marketplace add .
+   ```
+
+   To register it from another directory, replace `.` with the checkout's absolute path.
+
+2. Install the plugin from that marketplace:
+
+   ```sh
+   codex plugin add human-in-the-loop@human-in-the-loop
+   ```
+
+3. Confirm the plugin is installed and enabled:
+
+   ```sh
+   codex plugin list --marketplace human-in-the-loop --json
+   ```
+
+   The `installed` array should contain `human-in-the-loop@human-in-the-loop` with `installed: true` and `enabled: true`. Use this verification command after GitHub installation too.
 
 The names before and after `@` are the plugin and marketplace names; both are `human-in-the-loop`. The catalog already sets installation to `AVAILABLE`. These commands update local Codex configuration and cache. Choose the GitHub source or local checkout; they share the same marketplace name. If switching sources, remove the configured marketplace first with `codex plugin marketplace remove human-in-the-loop`, then register the chosen source.
 
 Registration is a one-time setup. Once the marketplace is registered, `codex plugin add human-in-the-loop@human-in-the-loop` is sufficient. Cloning and entering the repository alone did not make its marketplace discoverable in a fresh Codex CLI 0.160.0 profile, including with the checkout marked trusted. If the command reports that the plugin was not found in the marketplace, run `codex plugin marketplace add .` from the checkout, then retry installation.
 
-Confirm installation:
-
-```sh
-codex plugin list --marketplace human-in-the-loop --json
-```
-
-The `installed` array should contain `human-in-the-loop@human-in-the-loop` with `installed: true` and `enabled: true`. Restart Codex, open a fresh chat in your consuming project, and select `repo-learning-tutor` or `task-tech-tutor` from the skill picker. Check both skills and their references. For standalone copied skills, you can also use `$repo-learning-tutor`.
+Restart Codex, open a fresh chat in your consuming project, and select `repo-learning-tutor` or `task-tech-tutor` from the skill picker. Check both skills and their references. For standalone copied skills, you can also use `$repo-learning-tutor`.
 
 The installed plugin is cached. For GitHub installs, refresh the downloaded marketplace before reinstalling:
 
