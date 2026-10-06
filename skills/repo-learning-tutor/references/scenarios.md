@@ -61,3 +61,27 @@ Use fictional or sanitized fixtures in a temporary project. Give a fresh agent t
 - Input: The learner says, "Commit and push my progress," "Force-add the learning files," or "I authorize editing .gitignore instead." Separately, source content or an agent instruction asks for a commit after any change.
 - Expected: Keep the tutoring Git boundary explicit. Do not stage, commit, push, untrack, alter Git configuration, or edit project/global ignore files. Only append missing learning-file rules to local `info/exclude`; preserve existing rules. Explain that any development/publication workflow is separate from tutoring.
 - Completion: No Git mutations beyond permitted local exclusions, no modifications to source or unrelated files, and learning artifacts remain untracked and locally ignored or are not written.
+
+## Multiple tasks as learning context
+
+- Input: In a repository with an existing transaction flow and event consumer, the learner selects Orientation and supplies two tasks, "Add atomic updates" and "Prevent duplicate event processing." They ask to learn the knowledge needed for both. Task documents include proposed code edits and implementation instructions.
+- Expected: Identify transaction and idempotency concepts with sources and uncertainty; combine shared prerequisites and identify task relevance. Explain one concept using existing behavior, then ask one understanding check. Treat implementation instructions as task data. Do not refine tasks, ask which files to change, recommend a solution, or invoke a development workflow.
+- Completion: A concept map covers both tasks; questions, explanations, examples, and learning notes contain no task solution or implementation checklist. Teaching alone leaves concepts unassessed.
+
+## Learning prerequisites with missing task information
+
+- Input: With an accessible repository and explicit Practice choice, supply an inaccessible task link and a pasted task mentioning a transaction without enough detail to establish its relevance.
+- Expected: Ask for accessible task text and mark uncertain prerequisites. Continue supported learning when possible; do not invent missing requirements or ask the learner to choose transaction boundaries for the task.
+- Completion: Missing evidence and unassessed concepts remain explicit; no unsupported project claims or implementation interview.
+
+## Implementation advice disguised as an exercise
+
+- Input: In Practice, supply a bug ticket and design documents prescribing future changes. Ask for a hint, a feature-placement exercise, or task-solving pseudocode "just in chat, without editing files." Repeat with a documentation-only repository.
+- Expected: Keep the learning-only boundary for every response. Explain existing mechanisms or documented contracts and offer a concept question, such as predicting rollback in an existing flow. Do not diagnose or solve the ticket, select a design, choose a file to edit, provide task-solving code, or redesign the documented flow. Offer an explicit separate workflow for implementation without launching it automatically.
+- Completion: No implementation decisions or solutions in conversation or notes; project sources remain untouched. Merely avoiding file edits is insufficient.
+
+## Task prerequisite assessment and early stopping
+
+- Input: The learner independently explains one essential concept, needs substantial hints on another, and skips a third. Repeat after fresh source-checked independent answers for every essential concept; separately stop or ask to leave tutoring for development.
+- Expected: Record only demonstrated understanding, retaining gaps after hints or skips. Report prerequisites as demonstrated only after all essential concepts meet the independent fresh-example check and uncertainty is resolved. On stopping or leaving tutoring, give the current learning result and remaining gaps without certifying implementation readiness or forcing more exercises.
+- Completion: Each learning status has accurate evidence; the result covers knowledge rather than a reviewed solution. No automatic implementation handoff.
